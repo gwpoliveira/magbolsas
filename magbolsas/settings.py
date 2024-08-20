@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--)k$4acl^34rx0c*s*r&1yy06k4h7h8vb5x%9a-ymj_xq4nm@s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'magbolsas.grupomagister.online' ]
 
 
 # Application definition
