@@ -30,19 +30,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="URL_DO_EDITAL">Edital</a>
+                        <a href='https://institutomagisterpi.com.br' class="btn  btn-custom btn-primary me-5">Edital</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="URL_DO_SITE_DA_INSTITUICAO">Voltar ao Site</a>
+                        <a href='https://institutomagisterpi.com.br' class="btn btn-custom btn-primary">Voltar ao Site</a>
                     </li>
                 </ul>
-                <a href="URL_DO_LOGIN_ADMINISTRATIVO" class="btn btn-primary">Login Administrativo</a>
+
+                <a href="{% url 'admin:index' %}" class="btn btn-custom btn-primary">Login</a>
             </div>
         </div>
     </nav>
 
     <!-- Banner Full Width -->
-    <div class="banner-full" style="background-image: url('{% static 'img/banner.jpg' %}'); background-size: cover; height: 400px;">
+    <div class="banner-full" style="background-image: url('{% static 'img/banner.png' %}'); background-size: cover; height: 400px;">
     </div>
 
     <!-- Main Section with Form -->
@@ -136,7 +137,7 @@
                     <ul class="list-unstyled">
                         <li><a href="URL_DO_EDITAL">Edital</a></li>
                         <li><a href="URL_DO_SITE_DA_INSTITUICAO">Voltar ao Site</a></li>
-                        <li><a href="URL_DO_LOGIN_ADMINISTRATIVO">Login Administrativo</a></li>
+                        <a href="{% url 'admin:index' %}" class="btn btn-primary">Login</a>
                     </ul>
                 </div>
             </div>
