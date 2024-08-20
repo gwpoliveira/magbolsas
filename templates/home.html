@@ -1,0 +1,150 @@
+{% load static %}
+{% load form_tags %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <title>MagBolsas - Inscrição para Bolsa de Estudos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.png' %}" alt="Logo Instituição" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="URL_DO_EDITAL">Edital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="URL_DO_SITE_DA_INSTITUICAO">Voltar ao Site</a>
+                    </li>
+                </ul>
+                <a href="URL_DO_LOGIN_ADMINISTRATIVO" class="btn btn-primary">Login Administrativo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Full Width -->
+    <div class="banner-full" style="background-image: url('{% static 'img/banner.jpg' %}'); background-size: cover; height: 400px;">
+    </div>
+
+    <!-- Main Section with Form -->
+    <div class="container form-section my-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <img src="{% static 'img/banner.jpg' %}" alt="Banner" class="img-fluid">
+            </div>
+            <div class="col-lg-8">
+                <form method="post">
+    {% csrf_token %}
+
+    <!-- Nome Completo -->
+    <div class="mb-3">
+        <label for="nomeCompleto" class="form-label">Nome completo do estudante*</label>
+        {{ form.nome_completo|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo -->
+    </div>
+
+    <!-- Nome do Responsável -->
+    <div class="mb-3">
+        <label for="nomeResponsavel" class="form-label">Nome do responsável*</label>
+        {{ form.nome_responsavel|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo -->
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+        <label for="email" class="form-label">Email*</label>
+        {{ form.email|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo -->
+    </div>
+
+    <!-- Telefone -->
+    <div class="mb-3">
+        <label for="telefone" class="form-label">DDD+Telefone para contato* (Apenas números)</label>
+        {{ form.telefone|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo -->
+    </div>
+
+    <!-- Endereço -->
+    <div class="mb-3">
+        <label for="endereco" class="form-label">Endereço completo</label>
+        {{ form.endereco|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo -->
+        <style>
+        #id_endereco {
+                height: 60px;  /* Define a altura desejada em pixels */
+            }
+        </style>
+    </div>
+
+    <!-- Irmãos -->
+    <div class="mb-3">
+        <label class="form-label">Quantos irmãos o candidato tem?</label>
+        {{ form.irmaos|add_class:"form-select" }}  <!-- Adiciona a classe 'form-select' ao campo select -->
+    </div>
+
+    <!-- Unidade -->
+    <div class="mb-3">
+        <label for="unidade" class="form-label">Onde o candidato estuda atualmente?</label>
+        {{ form.unidade|add_class:"form-select" }}  <!-- Adiciona a classe 'form-select' ao campo select -->
+    </div>
+
+    <!-- Nível -->
+    <div class="mb-3">
+        <label for="nivel" class="form-label">Qual nível e série desejam concorrer?</label>
+        {{ form.nivel|add_class:"form-select" }}  <!-- Adiciona a classe 'form-select' ao campo select -->
+    </div>
+
+    <!-- Motivo da Bolsa -->
+    <div class="mb-3">
+        <label for="motivoBolsa" class="form-label">Por que você acha que merece a bolsa?</label>
+        {{ form.motivo_bolsa|add_class:"form-control" }}  <!-- Adiciona a classe 'form-control' ao campo textarea -->
+    </div>
+
+    <!-- Botão de Enviar -->
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo Instituição" class="img-fluid w-50">
+                </div>
+                <div class="col-lg-4">
+                    <!-- Coluna Vazia -->
+                </div>
+                <div class="col-lg-4 text-end">
+                    <ul class="list-unstyled">
+                        <li><a href="URL_DO_EDITAL">Edital</a></li>
+                        <li><a href="URL_DO_SITE_DA_INSTITUICAO">Voltar ao Site</a></li>
+                        <li><a href="URL_DO_LOGIN_ADMINISTRATIVO">Login Administrativo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
