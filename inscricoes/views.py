@@ -13,3 +13,6 @@ def inscricao_view(request):
         form = InscricaoForm()
 
     return render(request, 'home.html', {'form': form})  # Renderizando 'home.html'
+
+def inscricao_sucesso(request):
+    return render(request, 'inscricao_sucesso.html')

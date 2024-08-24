@@ -1,10 +1,8 @@
 from django import forms
 from .models import Inscricao
-from captcha.fields import CaptchaField
 
 class InscricaoForm(forms.ModelForm):
     confirmacao = forms.BooleanField(label="Eu confirmo que as informações fornecidas estão corretas", required=True)
-    captcha = CaptchaField(label='Por favor, verifique que você não é um robô')
 
     class Meta:
         model = Inscricao
@@ -23,6 +21,5 @@ class InscricaoForm(forms.ModelForm):
             'nivel',
             'escola',
             'selecao',
-            'confirmacao',
-            'captcha'
+            'confirmacao'
         ]

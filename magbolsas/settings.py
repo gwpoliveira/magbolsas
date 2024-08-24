@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inscricoes',
-    'captcha',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
