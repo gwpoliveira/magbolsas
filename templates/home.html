@@ -56,128 +56,129 @@
 
     <!-- Main Section with Form -->
     <div class="container-fluid form-section my-5 bg-custom" style="font-weight: bold;">
-        <div class="row">
-            <div class="col-lg-4 d-none d-lg-block">
-                <img src="{% static 'img/bannerlateral.png' %}" alt="Banner" class="img-fluid m-5">
+    <div class="row">
+        <div class="col-lg-4 d-none d-lg-flex align-items-center justify-content-center">
+            <img src="{% static 'img/bannerlateral.png' %}" alt="Banner" class="img-fluid">
+        </div>
+
+        <div class="col-lg-8">
+            <p class="h1 mb-5 mt-5 text-center">
+                <span style="color: #1a4aa0; font-size: 80px; font-family: 'Segoe UI Black'">Processo Seletivo</span>
+                <span style="color: #00a4e1;">2025</span>
+            </p>
+            <div class="text-center mb-5">
+                <p>Inscrições até xxx de setembro 2024</p>
+                <p>Data da prova xx de Setembro de 2024</p>
+                <p>Local de aplicação Unidade Primavera e Bela Vista</p>
             </div>
-            <div class="col-lg-8">
-                <p class="h1 mb-5 mt-5 text-center">
-                    <span style="color: #1a4aa0; font-size: 80px; font-family: 'Segoe UI Black'">Processo Seletivo</span>
-                    <span style="color: #00a4e1;">2025</span>
-                </p>
 
-                <form method="post">
-                    {% csrf_token %}
+            <form method="post">
+                {% csrf_token %}
 
-                    <!-- Nome Completo -->
-                    <div class="mb-3">
-                        <label for="nomeCompleto" class="form-label">Nome completo do estudante*</label>
-                        {{ form.nome_completo|add_class:"form-control" }}
-                    </div>
+                <!-- Nome Completo -->
+                <div class="mb-3">
+                    <label for="nomeCompleto" class="form-label">Nome completo do estudante*</label>
+                    {{ form.nome_completo|add_class:"form-control" }}
+                </div>
 
-                    <!-- Nome do Responsável -->
-                    <div class="mb-3">
-                        <label for="nomeResponsavel" class="form-label">Nome do responsável*</label>
-                        {{ form.nome_responsavel|add_class:"form-control" }}
-                    </div>
+                <!-- Nome do Responsável -->
+                <div class="mb-3">
+                    <label for="nomeResponsavel" class="form-label">Nome do responsável*</label>
+                    {{ form.nome_responsavel|add_class:"form-control" }}
+                </div>
 
-                    <!-- CPF -->
-                    <div class="mb-3">
-                        <label for="cpf" class="form-label">CPF*</label>
-                        {{ form.cpf|add_class:"form-control" }}
-                    </div>
+                <!-- CPF -->
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF*</label>
+                    {{ form.cpf|add_class:"form-control" }}
+                </div>
 
-                    <!-- Data de Nascimento -->
-                    <div class="mb-3">
-                        <label for="dataNascimento" class="form-label">Data de Nascimento*</label>
-                        {{ form.data_nascimento|add_class:"form-control" }}
-                    </div>
+                <!-- Data de Nascimento -->
+                <div class="mb-3">
+                    <label for="dataNascimento" class="form-label">Data de Nascimento*</label>
+                    {{ form.data_nascimento|add_class:"form-control" }}
+                </div>
 
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email*</label>
-                        {{ form.email|add_class:"form-control" }}
-                    </div>
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email*</label>
+                    {{ form.email|add_class:"form-control" }}
+                </div>
 
-                    <!-- Endereço -->
-                    <div class="mb-3">
-                        <label for="endereco" class="form-label">Endereço completo</label>
-                        {{ form.endereco|add_class:"form-control" }}
-                        <style>
-                            #id_endereco {
-                                height: 60px; /* Define a altura desejada em pixels */
-                            }
-                        </style>
-                    </div>
+                <!-- Endereço -->
+                <div class="mb-3">
+                    <label for="endereco" class="form-label">Endereço completo</label>
+                    {{ form.endereco|add_class:"form-control" }}
+                    <style>
+                        #id_endereco {
+                            height: 60px; /* Define a altura desejada em pixels */
+                        }
+                    </style>
+                </div>
 
-                    <!-- Cidade -->
-                    <div class="mb-3">
-                        <label for="cidade" class="form-label">Cidade*</label>
-                        {{ form.cidade|add_class:"form-control" }}
-                    </div>
+                <!-- Cidade -->
+                <div class="mb-3">
+                    <label for="cidade" class="form-label">Cidade*</label>
+                    {{ form.cidade|add_class:"form-control" }}
+                </div>
 
-                    <!-- UF -->
-                    <div class="mb-3">
-                        <label for="uf" class="form-label">UF*</label>
-                        {{ form.uf|add_class:"form-select" }}
-                    </div>
+                <!-- UF -->
+                <div class="mb-3">
+                    <label for="uf" class="form-label">UF*</label>
+                    {{ form.uf|add_class:"form-select" }}
+                </div>
 
-                    <!-- Telefone -->
-                    <div class="mb-3">
-                        <label for="telefone" class="form-label">DDD+Telefone para contato* (Apenas números)</label>
-                        {{ form.telefone|add_class:"form-control" }}
-                    </div>
+                <!-- Telefone -->
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">DDD+Telefone para contato* (Apenas números)</label>
+                    {{ form.telefone|add_class:"form-control" }}
+                </div>
 
-                    <!-- Irmãos -->
-                    <div class="mb-3">
-                        <label class="form-label">Quantos irmãos o candidato tem?</label>
-                        {{ form.irmaos|add_class:"form-select" }}
-                    </div>
+                <!-- Irmãos -->
+                <div class="mb-3">
+                    <label class="form-label">Quantos irmãos o candidato tem?</label>
+                    {{ form.irmaos|add_class:"form-select" }}
+                </div>
 
-                    <!-- Unidade -->
-                    <div class="mb-3">
-                        <label for="unidade" class="form-label">Qual unidade deseja estudar?</label>
-                        {{ form.unidade|add_class:"form-select" }}
-                    </div>
+                <!-- Unidade -->
+                <div class="mb-3">
+                    <label for="unidade" class="form-label">Qual unidade deseja estudar?</label>
+                    {{ form.unidade|add_class:"form-select" }}
+                </div>
 
-                    <!-- Nível -->
-                    <div class="mb-3">
-                        <label for="nivel" class="form-label">Qual série desejam concorrer?</label>
-                        {{ form.nivel|add_class:"form-select" }}
-                    </div>
+                <!-- Nível -->
+                <div class="mb-3">
+                    <label for="nivel" class="form-label">Qual série desejam concorrer?</label>
+                    {{ form.nivel|add_class:"form-select" }}
+                </div>
 
-                    <!-- Escola -->
-                    <div class="mb-3">
-                        <label for="escola" class="form-label">Escola que já estudou*</label>
-                        {{ form.escola|add_class:"form-control" }}
-                    </div>
+                <!-- Escola -->
+                <div class="mb-3">
+                    <label for="escola" class="form-label">Escola que já estudou*</label>
+                    {{ form.escola|add_class:"form-control" }}
+                </div>
 
-                    <!-- Como soube do processo seletivo -->
-                    <div class="mb-3">
-                        <label for="selecao" class="form-label">Como soube do processo seletivo?</label>
-                        {{ form.selecao|add_class:"form-select" }}
-                    </div>
+                <!-- Como soube do processo seletivo -->
+                <div class="mb-3">
+                    <label for="selecao" class="form-label">Como soube do processo seletivo?</label>
+                    {{ form.selecao|add_class:"form-select" }}
+                </div>
 
-                    <!-- Confirmação -->
-                    <div class="mb-3 form-check">
-                        {{ form.confirmacao|add_class:"form-check-input" }}
-                        <label for="{{ form.confirmacao.id_for_label }}" class="form-check-label">
-                            Eu confirmo que as informações fornecidas estão corretas
-                        </label>
-                    </div>
+                <!-- Confirmação -->
+                <div class="mb-3 form-check">
+                    {{ form.confirmacao|add_class:"form-check-input" }}
+                    <label for="{{ form.confirmacao.id_for_label }}" class="form-check-label">
+                        Eu confirmo que as informações fornecidas estão corretas
+                    </label>
+                </div>
 
-                    <!-- reCAPTCHA -->
-{#                    <div class="mb-3">#}
-{#                        {{ form.captcha }}#}
-{#                    </div>#}
-
-                    <!-- Botão de Enviar -->
-                    <button type="submit" class="btn btn-success mb-5">Enviar</button>
-                </form>
-
-            </div>
+                <!-- Botão de Enviar -->
+                <button type="submit" class="btn btn-success mb-5">Enviar</button>
+            </form>
         </div>
     </div>
+</div>
+
 
     <!-- Video Section -->
     <div class="container my-5">
@@ -200,7 +201,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="py-4" style="background-color: #fcdb47;">
+    <footer class="py-4" style="background-color: #fcdb47; color:#1a4aa0;">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Coluna do Logo -->
@@ -208,21 +209,27 @@
                     <img src="{% static 'img/logo.png' %}" alt="Logo Instituição" class="img-fluid" style="width: 100px;">
                 </div>
 
-                <!-- Coluna Vazia para Espaçamento -->
-                <div class="col-lg-2 mt-1" style="font-weight: bold;">
+                <!-- Coluna do meio -->
+                <div class="col-lg-2 mt-4" style="font-weight: bold;">
                     <p>Magister Primavera</p>
-                    <a href="https://maps.app.goo.gl/ouhVcBSSYiJUYZSJ9" style="color: black;">
-                        <p>R. Primeiro de Maio, 2235 - Marquês de Paranaguá</p></a>
-                    <p>Telefona: 8621072200</p>
-                    <p>Whatasapp: 8621072202</p>
+                    <a href="https://maps.app.goo.gl/ouhVcBSSYiJUYZSJ9" style="color: #1a4aa0;">
+                        <p><i class="bi bi-geo-alt"></i>
+                        R. Primeiro de Maio, 2235 - Marquês de Paranaguá</p></a>
+                    <p><i class="bi bi-telephone-forward"></i>
+                        Telefona: 8621072200</p>
+                    <p><i class="bi bi-whatsapp"></i>
+                        Whatasapp: 8621072202</p>
                 </div>
 
-                <div class="col-lg-2 mt-1" style="font-weight: bold;">
+                <div class="col-lg-2" style="font-weight: bold;">
                     <p>Magister Bela Vista</p>
-                    <a href="https://maps.app.goo.gl/qgpjkue34cFBgTB89" style="color: black;">
-                        <p>Q. Quatorze, casa 5,6 e 7 - Bela Vista, Teresina - PI, 64031-410</p></a>
-                    <p>Telefona: 86xxxxxx</p>
-                    <p>Whatasapp: 86xxxxxx</p>
+                    <a href="https://maps.app.goo.gl/qgpjkue34cFBgTB89" style="color: #1a4aa0;">
+                        <p><i class="bi bi-geo-alt"></i>
+                        Q. Quatorze, casa 5,6 e 7 - Bela Vista, Teresina - PI, 64031-410</p></a>
+                    <p><i class="bi bi-telephone-forward"></i>
+                        Telefona: 86xxxxxx</p>
+                    <p><i class="bi bi-whatsapp"></i>
+                        Whatasapp: 86xxxxxx</p>
                 </div>
 
                 <!-- Coluna dos Links -->
