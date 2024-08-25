@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MagBolsas{% endblock %}</title>
+    <link rel="icon" href="{% static 'ico/favicon.ico' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.png' %}" alt="Logo Instituição" height="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href='https://institutomagisterpi.com.br' class="btn btn-custom btn-primary me-5">
+                            <i class="bi bi-file-earmark-fill me-4"></i>Edital</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href='https://institutomagisterpi.com.br' class="btn btn-custom btn-primary">
+                            <i class="bi bi-house-door me-4"></i>Voltar ao Site</a>
+                    </li>
+                </ul>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'lista_inscritos' %}" class="btn btn-custom btn-primary me-2">
+                        <i class="bi bi-list"></i> Ver Inscritos
+                    </a>
+                    <a href="{% url 'logout' %}" class="btn btn-custom btn-primary">
+                        <i class="bi bi-box-arrow-right"></i> Logout
+                    </a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-custom btn-primary">
+                        <i class="bi bi-person-circle me-4"></i> Login
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container-fluid">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background-color: #fcdb47; color:#1a4aa0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Coluna do Logo -->
+                <div class="col-lg-4 text-center text-lg-start">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo Instituição" class="img-fluid" style="width: 100px;">
+                </div>
+
+                <!-- Coluna do meio -->
+                <div class="col-lg-2 mt-4" style="font-weight: bold;">
+                    <p>Magister Primavera</p>
+                    <a href="https://maps.app.goo.gl/ouhVcBSSYiJUYZSJ9" style="color: #1a4aa0;">
+                        <p><i class="bi bi-geo-alt"></i>
+                        R. Primeiro de Maio, 2235 - Marquês de Paranaguá</p></a>
+                    <p><i class="bi bi-telephone-forward"></i>
+                        Telefone: 8621072200</p>
+                    <p><i class="bi bi-whatsapp"></i>
+                        WhatsApp: 8621072202</p>
+                </div>
+
+                <div class="col-lg-2" style="font-weight: bold;">
+                    <p>Magister Bela Vista</p>
+                    <a href="https://maps.app.goo.gl/qgpjkue34cFBgTB89" style="color: #1a4aa0;">
+                        <p><i class="bi bi-geo-alt"></i>
+                        Q. Quatorze, casa 5,6 e 7 - Bela Vista, Teresina - PI, 64031-410</p></a>
+                    <p><i class="bi bi-telephone-forward"></i>
+                        Telefone: 86xxxxxx</p>
+                    <p><i class="bi bi-whatsapp"></i>
+                        WhatsApp: 86xxxxxx</p>
+                </div>
+
+                <!-- Coluna dos Links -->
+                <div class="col-lg-4 text-center text-lg-end mt-4">
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="URL_DO_EDITAL" style="color: black;">
+                            <i class="bi bi-file-earmark-fill me-3"></i>Edital</a></li>
+                        <li><a href="URL_DO_SITE_DA_INSTITUICAO" style="color: black;">
+                            <i class="bi bi-house-door me-3"></i>Voltar ao Site</a></li>
+                        <li><a href="{% url 'admin:index' %}" style="color: black;">
+                            <i class="bi bi-person-circle me-3"></i>Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="container-fluid text-center mt p-2" style="background-color: #1a4aa0;">
+        <p style="font-weight: bold; color:#fff">@2024 - Todos os direitos reservados ao Instituto Magister de Ensino</p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

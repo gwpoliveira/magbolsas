@@ -51,7 +51,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.static',
             ],
+            'libraries': {
+                'form_filters': 'inscricoes.templatetags.form_tags',  # Registrando sua biblioteca de tags
+            },
         },
     },
 ]
@@ -114,6 +118,9 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Configuração para arquivos estáticos coletados (produção)
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+LOGIN_REDIRECT_URL = 'lista_inscritos'
+LOGOUT_REDIRECT_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
