@@ -5,4 +5,25 @@
 .bg-custom {
     background-color: #fcdb47;
 }
+.banner-full {
+    background-image: url('{% static "img/banner.png" %}');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 100%;
+}
 
+@media (max-width: 768px) {
+    .banner-full {
+        height: 250px; /* Altura menor para dispositivos menores */
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-full {
+        height: 200px; /* Altura ainda menor para dispositivos muito pequenos */
+    }
+}
+
+    }
+}
