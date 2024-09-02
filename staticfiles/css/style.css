@@ -6,7 +6,7 @@
     background-color: #fcdb47;
 }
 .banner-full {
-    background-image: url('{% static "img/banner.png" %}');
+    background-image: url('{% static "img/bannerpequeno.png" %}');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -22,5 +22,8 @@
 @media (max-width: 576px) {
     .banner-full {
         height: 200px; /* Altura ainda menor para dispositivos muito pequenos */
+    }
+}
+
     }
 }
