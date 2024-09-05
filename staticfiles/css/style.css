@@ -25,5 +25,23 @@
     }
 }
 
-    }
+.title-main {
+  color: #1a4aa0;
+  font-size: 80px;
+  font-family: 'Segoe UI Black', sans-serif;
+  letter-spacing: 2px; /* Espaçamento entre as letras */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
+  border-bottom: 3px solid #00a4e1; /* Linha decorativa abaixo do texto */
+  display: inline-block;
 }
+
+.title-year {
+  color: #00a4e1;
+  font-size: 80px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  padding-left: 15px; /* Espaçamento entre o ano e o título */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave no ano */
+}
+
