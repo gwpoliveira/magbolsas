@@ -11,7 +11,14 @@ class Inscricao(models.Model):
     uf = models.CharField(verbose_name='UF:', max_length=2, blank=True)
     telefone = models.CharField(verbose_name='Telefone para contato:', max_length=15, blank=True)
     irmaos = models.CharField(verbose_name='Tem irmãos?', max_length=20, blank=True, null=True, choices=[('Não', 'Não Tenho'),('Um', 'Um'), ('Dois', 'Dois'), ('Três ou Mais', 'Três ou Mais')])
-    unidade = models.CharField(max_length=50, choices=[('Primavera', 'Unidade Primavera')], blank=True)
+    unidade = models.CharField(
+        max_length=50,
+        choices=[
+            ('Primavera', 'Unidade Primavera'),
+            ('Bela Vista', 'Unidade Bela Vista')
+        ],
+        blank=True
+    )
     nivel = models.CharField(max_length=50, blank=True, null=True, choices=[
         ('Maternal Babay', 'Maternal Babay'),
         ('1º ano Fundamental I', '1º ano Fundamental I'),
