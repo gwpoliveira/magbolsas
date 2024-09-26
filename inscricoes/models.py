@@ -17,7 +17,8 @@ class Inscricao(models.Model):
             ('Primavera', 'Unidade Primavera'),
             ('Bela Vista', 'Unidade Bela Vista')
         ],
-        blank=True
+        blank=False,
+
     )
     nivel = models.CharField(max_length=50, blank=True, null=True, choices=[
         ('Maternal Babay', 'Maternal Babay'),
