@@ -14,13 +14,13 @@ class Inscricao(models.Model):
     unidade = models.CharField(
         max_length=50,
         choices=[
-            ('Primavera', 'Unidade Primavera'),
+            # ('Primavera', 'Unidade Primavera'),
             ('Bela Vista', 'Unidade Bela Vista')
         ],
         blank=False,
 
     )
-    nivel = models.CharField(max_length=50, blank=True, null=True, choices=[
+    nivel = models.CharField(max_length=50, blank=False, choices=[
         ('Maternal Babay', 'Maternal Babay'),
         ('1º ano Fundamental I', '1º ano Fundamental I'),
         ('2º ano Fundamental I', '2º ano Fundamental I'),
