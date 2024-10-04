@@ -1,47 +1,10 @@
-.btn-custom {
-        width: 200px; /* Defina a largura desejada */
-    }
-
-.bg-custom {
-    background-color: #fcdb47;
+.border-separator {
+    border-right: 2px solid #333 !important;
+    padding-right: 20px !important;
 }
-.banner-full {
-    background-image: url('{% static "img/bannerpequeno.png" %}');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    width: 100%;
-}
-
 @media (max-width: 768px) {
-    .banner-full {
-        height: 250px; /* Altura menor para dispositivos menores */
+    .border-separator {
+        border-right: none; /* remove a linha em telas menores */
+        padding-right: 0;
     }
 }
-
-@media (max-width: 576px) {
-    .banner-full {
-        height: 200px; /* Altura ainda menor para dispositivos muito pequenos */
-    }
-}
-
-.title-main {
-  color: #1a4aa0;
-  font-size: 80px;
-  font-family: 'Segoe UI Black', sans-serif;
-  letter-spacing: 2px; /* Espaçamento entre as letras */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra no texto */
-  border-bottom: 3px solid #00a4e1; /* Linha decorativa abaixo do texto */
-  display: inline-block;
-}
-
-.title-year {
-  color: #00a4e1;
-  font-size: 80px;
-  font-family: 'Segoe UI', sans-serif;
-  font-weight: bold;
-  display: inline-block;
-  padding-left: 15px; /* Espaçamento entre o ano e o título */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave no ano */
-}
-
