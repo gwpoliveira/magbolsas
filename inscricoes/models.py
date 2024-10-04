@@ -14,7 +14,7 @@ class Inscricao(models.Model):
     unidade = models.CharField(
         max_length=50,
         choices=[
-            # ('Primavera', 'Unidade Primavera'),
+            ('Primavera', 'Unidade Primavera'),
             ('Bela Vista', 'Unidade Bela Vista')
         ],
         blank=False,
